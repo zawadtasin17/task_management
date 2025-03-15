@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-// import { z, ZodError } from "zod";
-// import { getZodError } from "../helper/getZodError";
+import { z, ZodError } from "zod";
+import { getZodError } from "../helper/getZodError";
 // import { showToast } from "../helper/showToast";
+
 const HomePage = () => {
   const [formData, setFormData] = useState();
   const [err, setError] = useState();
@@ -9,11 +10,11 @@ const HomePage = () => {
   const taskSchema = z.object({
     title: z
       .string()
-      .min(3, { message: "Title must be at least 3 character long." }),
+      .min(6, { message: "Title must be at least 6 characters long." }),
     description: z
       .string()
-      .min(3, { message: "Description must be at least 3 character long." })
-      .max(500, { message: "Lenght acceeded." }),
+      .min(6, { message: "Description must be at least 6 characters long." })
+      .max(500, { message: "Length acceeded." }),
   });
 
   const handleInput = (e) => {
