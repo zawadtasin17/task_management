@@ -6,13 +6,13 @@ const TaskSchema = new mongoose.Schema({
         required: true
     },
     description: {
-        type: Boolean,
+        type: String,
         default: true
     },
     status: {
         type: String,
         default: true,
-        default: "pending",
+        default: "Pending",
         enum: ["Pending", "Running","Completed","False"]
     },
 }, { timestamps: true });

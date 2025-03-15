@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Layout = () => {
   return (
-    <div className="max-w-screen-sm mx-auto mt-10 p-5 shadow-sm border rounded">
+    <div className="max-w-screen-md mx-auto mt-20 p-6 shadow-lg shadow-blue-300 border border-cyan-800 rounded-2xl bg-white">
       <ToastContainer />
       <Navigation />
       <Outlet />

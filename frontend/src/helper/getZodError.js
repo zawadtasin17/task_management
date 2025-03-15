@@ -3,5 +3,5 @@ export const getZodError = (errors) => {
   errors.forEach((error) => {
     newError[error.path[0]] = error.message;
   });
-  return errorObj;
+  return newError;
 }

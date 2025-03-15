@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Badge from "../components/Badge";
 import { Link } from "react-router-dom";
-// import Task from "../components/Task";
-// import { showToast } from "../helper/showToast";
-
+import Task from "../components/Task";
+import { showToast } from "../helper/showToast";
 const TaskListPage = () => {
   const [referesh, setReferesh] = useState(false);
   const [tasks, setTasks] = useState();
@@ -14,6 +13,7 @@ const TaskListPage = () => {
         `${import.meta.env.VITE_API_BASE_URL}/task/get-all-task`
       );
       const responseData = await response.json();
+      console.log("API Response:", responseData); // Log the response
       setTasks(responseData);
     };
     getTask();
@@ -48,7 +48,7 @@ const TaskListPage = () => {
             <Task key={task._id} props={task} onDelete={deleteTask} />
           ))
         ) : (
-          <>0 Task.</>
+          <>No Tasks".</>
         )
       ) : (
         <>Loading...</>
